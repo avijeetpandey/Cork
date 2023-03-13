@@ -223,6 +223,7 @@ struct AddFormulaView: View
                 }
                 .onAppear
                 {
+                    // ignore this build warning - future feature wiL use this
                     for var packageToInstall in installationProgressTracker.packagesBeingInstalled
                     {
                         Task(priority: .userInitiated)
