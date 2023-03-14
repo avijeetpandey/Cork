@@ -134,6 +134,17 @@ struct SidebarView: View
         .listStyle(.sidebar)
         .frame(minWidth: 200)
         .searchable(text: $searchText, placement: .sidebar, prompt: Text("Search Packages"))
+        .toolbar
+        {
+            ToolbarItem(placement: .automatic) {
+                Button {
+                    print("Would go to start page")
+                } label: {
+                    Label("Go to Start Page", systemImage: "house")
+                }
+
+            }
+        }
         .sheet(isPresented: $appState.isShowingMaintenanceSheet)
         {
             MaintenanceView(isShowingSheet: $appState.isShowingMaintenanceSheet)
